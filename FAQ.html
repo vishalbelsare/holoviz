@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ — HoloViz 0.12.0 documentation</title>
+<link href="_static/css/theme.css" rel="stylesheet"/>
+<link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="_static/basic.css" rel="stylesheet" type="text/css">
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<link href="_static/favicon.ico" rel="shortcut icon">
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="about.html" rel="next" title="About Us"/>
+<link href="Roadmap.html" rel="prev" title="HoloViz Roadmap, as of 3/2020"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="index.html">
+<img alt="logo" class="logo" src="_static/holoviz-logo.svg"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  Introduction
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="background.html">
+  Background
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="installation.html">
+  Installation
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="talks/index.html">
+  Talks
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="tutorial/index.html">
+  Tutorial
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="topics/index.html">
+  Topics
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="Roadmap.html">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="current reference internal nav-link" href="#">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="about.html">
+  About
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="community.html">
+  Community
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-holoviz-really">
+   What is HoloViz, really?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-does-holoviz-relate-to-pyviz">
+   How does HoloViz relate to PyViz?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#is-holoviz-a-commercial-product">
+   Is HoloViz a commercial product?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#wow-how-did-you-do-all-this-work">
+   Wow, how did you do all this work?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#does-holoviz-include-3d-support">
+   Does HoloViz include 3D support?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-else-is-not-covered-well-by-holoviz">
+   What else is
+   <em>
+    not
+   </em>
+   covered well by HoloViz?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-report-a-problem">
+   How do I report a problem?
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-holoviz-really">
+<h2>What is HoloViz, really?<a class="headerlink" href="#what-is-holoviz-really" title="Permalink to this headline">¶</a></h2>
+<p>HoloViz is about working together on many different levels:</p>
+<ul class="simple">
+<li><p>A set of high-level packages that make it easier to use plotting and data libraries – good starting points for doing your work!</p></li>
+<li><p>A set of package authors who work together to make their packages interoperate well, to help reduce gaps and duplication between packages and improve the overall user experience.</p></li>
+<li><p>A set of packages that have been verified to work well together, in matching versions, that can all be installed with one command and are continuously tested to ensure that they keep working together</p></li>
+<li><p>A set of examples and tutorials that help you see how various Python packages can work together to solve a huge range of visualization problems, from common situations to tricky special cases.</p></li>
+</ul>
+<p>There is a specific installable package named <code class="docutils literal notranslate"><span class="pre">holoviz</span></code>, but it’s valuable mainly for its dependencies, which are installed in matching versions when <code class="docutils literal notranslate"><span class="pre">holoviz</span></code> is installed.  There is almost no code actually in HoloViz, apart from the examples in the tutorials.</p>
+</div>
+<div class="section" id="how-does-holoviz-relate-to-pyviz">
+<h2>How does HoloViz relate to PyViz?<a class="headerlink" href="#how-does-holoviz-relate-to-pyviz" title="Permalink to this headline">¶</a></h2>
+<p>The packages in HoloViz were originally described as “PyViz” packages, but in June 2019 PyViz.org was  split off as a separate general-purpose site for all of Python visualization, with HoloViz referring to the specific packages  maintained in by the group now called HoloViz.</p>
+</div>
+<div class="section" id="is-holoviz-a-commercial-product">
+<h2>Is HoloViz a commercial product?<a class="headerlink" href="#is-holoviz-a-commercial-product" title="Permalink to this headline">¶</a></h2>
+<p>HoloViz is supported by <a class="reference external" href="http://anaconda.com">Anaconda, Inc.</a> and through partnerships with a number of commercial and government clients, but HoloViz and all of its component packages are open source packages freely available for both commercial and non-commercial use.</p>
+</div>
+<div class="section" id="wow-how-did-you-do-all-this-work">
+<h2>Wow, how did you do all this work?<a class="headerlink" href="#wow-how-did-you-do-all-this-work" title="Permalink to this headline">¶</a></h2>
+<p>HoloViz is built on a wide foundation of libraries and tools in the scientific Python ecosystem. Most of the time, we’re just pulling together existing functionality and making it simpler to access and easier to compose. We do have some projects like Datashader and Colorcet that were explicitly commissioned to fill a need (in this case, handling large data and providing a range of uniform colormaps), but mostly the underlying functionality was always there, it was just difficult to apply to typical situations in data science and analysis.</p>
+</div>
+<div class="section" id="does-holoviz-include-3d-support">
+<h2>Does HoloViz include 3D support?<a class="headerlink" href="#does-holoviz-include-3d-support" title="Permalink to this headline">¶</a></h2>
+<p>A bit. Some historical context will probably help make this clear. Over the past 30 years or so, visualization packages and developers have been organized into two mostly non-overlapping camps dealing with either <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_visualization">scientific visualization</a> or  <a class="reference external" href="https://en.wikipedia.org/wiki/Information_visualization">information visualization</a>. SciVis primarily focuses on data that is situated in the 3D space of the real world, and it thus uses variants of the three-dimensional rendering algorithms made to represent the real world in computer graphics. InfoVis primarily focuses on representing more abstract information that can be laid out in any number of ways, and for practical reasons it tends to use 2D representations where it is simple to show axes and other tools to explicitly indicate mappings from the page onto the underlying data coordinates.</p>
+<p>HoloViz currently focuses on the packages and applications from the InfoVis domain, and thus primarily supports two-dimensional plotting and layouts. There is some limited three-dimensional rendering in HoloViz provided by <a class="reference external" href="http://holoviews.org/reference/elements/matplotlib/TriSurface.html">Matplotlib</a> and <a class="reference external" href="http://holoviews.org/reference/elements/plotly/TriSurface.html">Plotly</a>, but HoloViz does not currently include comprehensive support for 3D visualizations, virtual reality, augmented reality, and related topics. See the <a class="reference external" href="Roadmap">HoloViz Roadmap</a> if you would like to help broaden its coverage of these topics, or else consider using complementary packages like <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi">MayaVi</a>, <a class="reference external" href="https://www.vtk.org/">VTK</a>, <a class="reference external" href="https://github.com/maartenbreddels/ipyvolume">IPyVolume</a>, and <a class="reference external" href="http://vaex.astro.rug.nl">Vaex</a> (a 3D-capable version of Datashader).</p>
+</div>
+<div class="section" id="what-else-is-not-covered-well-by-holoviz">
+<h2>What else is <em>not</em> covered well by HoloViz?<a class="headerlink" href="#what-else-is-not-covered-well-by-holoviz" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Native GUI apps (only browser-based approaches are included so far)</p></li>
+<li><p>Domain-specific toolkits and analyses (not suitable for HoloViz, but can be in affiliated repos)</p></li>
+<li><p>Native JavaScript toolkits like D3 (HoloViz focuses on people who want to work directly in Python, not those willing to write code in other languages to deal with their Python data)</p></li>
+<li><p>Hard real-time displays (HoloViz tools offer dynamic updates, but cannot enforce strict latency requirements)</p></li>
+<li><p>Drag and drop visualization development (HoloViz supports extensive interactivity, but does not currently have a way to build non-trivial visualizations graphically as in business intelligence apps or spreadsheets)</p></li>
+</ul>
+<p>See the <a class="reference external" href="Roadmap">Roadmap</a> for more details on topics that could be added in future work.</p>
+</div>
+<div class="section" id="how-do-i-report-a-problem">
+<h2>How do I report a problem?<a class="headerlink" href="#how-do-i-report-a-problem" title="Permalink to this headline">¶</a></h2>
+<p>For the quickest response from those who can fix things, try to identify which HoloViz package is most directly involved, and then click on the appropriate logo on the <a class="reference external" href="index.html">HoloViz home page</a> to find their Github site for filing issues.  If your issue is with this website, the notebooks you downloaded from it, or the <code class="docutils literal notranslate"><span class="pre">holoviz</span></code> package itself, then please open an issue on <a class="reference external" href="https://github.com/holoviz/holoviz/issues">github.com/holoviz.</a> And if you want to start open-ended discussion or you can’t figure out which project is involved, visit <a class="reference external" href="https://discourse.holoviz.org">discourse.holoviz.</a></p>
+</div>
+</div>
+</div>
+<div class="prev-next-bottom">
+<a class="left-prev" href="Roadmap.html" id="prev-link" title="previous page">HoloViz Roadmap, as of 3/2020</a>
+<a class="right-next" href="about.html" id="next-link" title="next page">About Us</a>
+</div>
+</main>
+</div>
+</div>
+<script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright © 2017-2019, HoloViz authors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

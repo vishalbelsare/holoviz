@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HoloViz Roadmap, as of 3/2020 — HoloViz 0.12.0 documentation</title>
+<link href="_static/css/theme.css" rel="stylesheet"/>
+<link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="_static/basic.css" rel="stylesheet" type="text/css">
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<link href="_static/favicon.ico" rel="shortcut icon">
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="FAQ.html" rel="next" title="FAQ"/>
+<link href="topics/index.html" rel="prev" title="Topics"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="index.html">
+<img alt="logo" class="logo" src="_static/holoviz-logo.svg"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  Introduction
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="background.html">
+  Background
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="installation.html">
+  Installation
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="talks/index.html">
+  Talks
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="tutorial/index.html">
+  Tutorial
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="topics/index.html">
+  Topics
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="current reference internal nav-link" href="#">
+  Roadmap
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="about.html">
+  About
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="community.html">
+  Community
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<nav id="bd-toc-nav">
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<div class="section" id="holoviz-roadmap-as-of-3-2020">
+<h1>HoloViz Roadmap, as of 3/2020<a class="headerlink" href="#holoviz-roadmap-as-of-3-2020" title="Permalink to this headline">¶</a></h1>
+<p>HoloViz helps coordinate between numerous independent open-source
+projects, each with their own developers, priorities, and agendas. In
+large part, the future of HoloViz is up to a distributed team of
+developers that focus on the areas of greatest current interest and
+need, including areas that specifically get current funding.</p>
+<p>Immediate, already funded priorities for 2020 include:</p>
+<ol class="arabic simple">
+<li><p><strong>Ongoing maintenance, improved documentation and examples</strong>: As
+always, there are various bugs and usability issues reported on the
+issue tracker, and we will address these as time permits.</p></li>
+<li><p><strong>Improved imaging, simulation, machine learning, and Earth science
+workflows</strong>: Support for working with image and other
+multidimensional data for visualization and machine-learning
+applications, including on HPC systems.</p></li>
+<li><p><strong>Simpler deployment of large-scale visualizations</strong>: Automatic
+generation of slippy-map tiles for exploration of large datasets
+using standard web servers. Already provided in Datashader, but
+needs additional polishing.</p></li>
+<li><p><strong>Better Datashader integration with external plotting libraries
+(HoloViews, Plotly, Matplotlib)</strong>: Datashader needs to provide
+functions for supporting hover information, legends, colorbars, and
+interactivity, which each plotting library can then use.</p></li>
+<li><p><strong>Support for maintaining Python-based projects</strong>: As maintainers of
+a wide range of Python projects, we are working to minimize the cost
+of maintaining each one, by sharing code for tracking versions,
+making releases, providing example scripts, managing datasets,
+documenting examples, testing examples (including notebooks), and
+building websites. Projects addressing each of these areas are being
+added to the <a class="reference external" href="https://github.com/pyviz">PyViz Github organization</a>
+and will be documented as they become mature.</p></li>
+<li><p><strong>Integrating 3D surface and volume rendering into HoloViz</strong>: HoloViews
+can plot limited quantities of 3D surface or point data using
+<a class="reference external" href="http://holoviews.org/reference/elements/matplotlib/TriSurface.html">Matplotlib</a>
+or
+<a class="reference external" href="http://holoviews.org/reference/elements/plotly/TriSurface.html">Plotly</a>,
+but other tools are needed for larger datasets or for volumetric
+rendering with transparent/semitransparent voxels. Improving 3D
+support could be as simple as providing examples for using existing
+tools like
+<a class="reference external" href="https://github.com/maartenbreddels/ipyvolume">IPyVolume</a> and
+<a class="reference external" href="http://vaex.astro.rug.nl">Vaex</a>, or by wrapping JavaScript
+libraries like <a class="reference external" href="https://threejs.org">ThreeJS</a> and
+<a class="reference external" href="https://cesiumjs.org">CesiumJS</a>.  There’s a first <a class="reference external" href="http://assets.holoviews.org/demos/HoloViews_CesiumJS.html">prototype
+for a CesiumJS backend now available</a>,
+but lots more work to do to make it practical for real use.</p></li>
+<li><p><strong>More extensive documentation about deployment</strong>: HoloViz includes a
+tutorial on <a class="reference external" href="http://holoviz.org/tutorial/13_Deploying_Bokeh_Apps.html">deployment using Bokeh
+server</a>,
+but there are many other ways to set up live Python-backed plots
+and Panel dashboards or apps, including creating a Flask server or
+embedding into Django, along with deploying via Heroku or Google
+Cloud and AWS or via the Anaconda Enterprise platform or on
+<a class="reference external" href="https://mybinder.org">MyBinder</a>. Documenting and testing these
+possibilities takes time and effort, and any contributions or
+examples that will help people get started and decide between the
+alternatives would be very helpful.</p></li>
+</ol>
+<p>Other things we’d like to see in HoloViz or in packages designed to work
+well with HoloViz include:</p>
+<ol class="arabic">
+<li><p><strong>Bokeh WebGL support</strong>: Bokeh provides good support for working
+interactively with small datasets using an HTML Canvas (client-side
+interactivity), and when combined with Datashader it can handle
+enormous datasets by pre-rendering them to images in Python
+(server-side). However, in between these two extremes there is a
+range of data sizes that could be addressed well by the client-side
+WebGL technology. Bokeh includes some WebGL support, but it is patchy
+and not fully implemented, so it is not the default for either direct
+Bokeh usage or for Bokeh with the HoloViews API. Volunteers to
+maintain and expand the WebGL support could make a much broader range
+of data sizes practical in easily redistributable standalone HTML
+files, and could enable new classes of high-performance interactive
+features.</p></li>
+<li><p><strong>Additional plot types</strong>: HoloViews includes an extensive range of
+plot types (Elements) covering the typical visualizations used across
+many domains. However, there are always more that can be included,
+and some domains are not as well covered as others. Some examples
+that we’d like to include are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Parallel_coordinates">parallel
+coordinates</a>
+and <a class="reference external" href="https://en.wikipedia.org/wiki/Radar_chart">radar charts</a>
+(polar parallel coordinates, or star charts)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Treemapping">treemaps</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dendrogram">dendrograms</a> and
+<a class="reference external" href="https://en.wikipedia.org/wiki/Cladogram">cladograms</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Radial_tree">radial trees</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing">packed
+bubbles</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Funnel_chart">funnel charts</a></p></li>
+</ul>
+<p>(And if someone wants to write and maintain a <a class="reference external" href="https://en.wikipedia.org/wiki/Pie_chart">pie chart</a> even though they are
+nearly always the wrong thing to do, we can probably be convinced
+to allow it. :-)</p>
+</li>
+<li><p><strong>Better native GUI support</strong>: Right now, HoloViz focuses exclusively
+on tools that work well in web browsers, because it aims to support
+the entire workflow from initial exploration to delivery of fully
+functional interactive applications to other stakeholders. One
+consequence is that it doesn’t currently support the types of
+interactivity provided by Matplotlib when used with its native GUI
+backends like Qt. It should be feasible to make the interactive
+functionality in HoloViews (e.g. streams and DynamicMaps) support
+native GUI apps as well, allowing the same user code to be applied to
+a wider range of use cases.</p></li>
+<li><p><strong>Altair/Vega/Vega-lite integration</strong>: HoloViews and Bokeh provide
+declarative syntaxes that can be expressed in purely static form, and
+it should be feasible to write a translator between them and other
+declarative libraries like Altair, Vega, and Vega-Lite. Those
+libraries are currently focused primarily on statistical
+visualizations, not covering areas like multidimensional (image-like)
+plotting where HoloViews and Bokeh are also used, but they offer a
+common interchange format that could be helpful for interoperating
+with other tools. Writing an import and export facility that covers
+the bulk of the shared functionality should not be a major
+undertaking and could open up interesting new applications. For now,
+Altair and Vega-lite visualizations can be specified and then used
+directly with Panel.</p></li>
+<li><p><strong>hvPlot/HoloViews serialization</strong>: HoloViews uses a declarative design that
+can be represented in a purely textual form, without any Python code.
+An initial implementation allows any Param-based objects (including
+HoloViews objects) to be represented in JSON or YAML, but it needs
+some polishing before it can be put into wide use for saving and
+restoring configurations and layouts.</p></li>
+<li><p><strong>Better integration with ____</strong>: There are a lot of tools in the
+Python and other scientific software ecosystems that could be
+included in HoloViz or made easily usable from it. NetworkX (already
+usable but not fully exploited yet) is just one example of many;
+suggestions welcome!</p></li>
+<li><p><strong>GUI-based plot creation</strong>: (As in business intelligence and
+dashboarding applications.) The powerful components available
+in HoloViz are ready for Python users to put together into
+visualizations and apps, but they would also make a very strong
+base for building a graphical approach for working with data, with
+drag and drop layouts, GUI-configurable mapping of data sources, and
+GUI configuration of the plot objects. HoloViews components are
+already declarative, which means that they can be mapped directly
+into GUI elements for changing their parameters dynamically. Paired
+with the new <a class="reference external" href="https://github.com/ContinuumIO/intake">Intake</a>
+library for declaring data sources, it would be possible to build a
+fully graphical interface for working with data that would have the
+advantage of being backed by a fully configurable, open-source set
+of plotting library elements, ensuring that when people outgrow
+the GUI framework they can easily extend and expand anything
+developed in it, unlike current business intelligence and
+dashboarding applications.</p></li>
+</ol>
+<p>If any of the functionality above is interesting to you (or you have
+ideas of your own!) and can offer help with implementation, please
+open an issue on this repository or on the specific subproject
+repository involved. And if you are lucky enough to be in a position
+to fund our developers to work on it, please contact
+<code class="docutils literal notranslate"><span class="pre">sales@anaconda.com</span></code>.</p>
+</div>
+</div>
+<div class="prev-next-bottom">
+<a class="left-prev" href="topics/index.html" id="prev-link" title="previous page">Topics</a>
+<a class="right-next" href="FAQ.html" id="next-link" title="next page">FAQ</a>
+</div>
+</main>
+</div>
+</div>
+<script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright © 2017-2019, HoloViz authors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
