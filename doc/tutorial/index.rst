@@ -7,6 +7,7 @@ HoloViz Tutorial
 
 .. toctree::
     :titlesonly:
+    :hidden:
     :maxdepth: 2
 
     Setup <Setup>
@@ -14,7 +15,7 @@ HoloViz Tutorial
     Plotting <Plotting>
     Composing Plots <Composing_Plots>
     Interlinked Plots <Interlinked_Plots>
-    Interactive Pipelines Plots <Interactive_Pipelines>
+    Interactive Pipelines <Interactive_Pipelines>
     Dashboards <Dashboards>
 
     .. Optional content

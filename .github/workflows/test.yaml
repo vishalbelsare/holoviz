@@ -1,4 +1,4 @@
-name: pytest
+name: tests
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - '*'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 1 */2 SUN'  # every two months on Sunday at 4 am
 
 jobs:
   test_suite:
@@ -16,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        python-version: [3.8]
+        python-version: [3.9]
     timeout-minutes: 60
     defaults:
       run:
@@ -25,10 +28,15 @@ jobs:
       DESC: "Python ${{ matrix.python-version }} tests"
       PYTHON_VERSION: ${{ matrix.python-version }}
     steps:
-      - uses: actions/checkout@v2
+      - name: configure Page file on Windows
+        # To fix a Memory Error while reading the earthquake Parquet file
+        # See https://github.com/holoviz/holoviz/issues/309
+        if: contains(matrix.os, 'windows')
+        uses: al-cheb/configure-pagefile-action@v1.2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - uses: conda-incubator/setup-miniconda@v2
@@ -40,11 +48,9 @@ jobs:
         run: |
           conda config --set always_yes True
           conda install -c pyviz "pyctdev>=0.5"
-          doit ecosystem_setup
           doit env_create --python=${{ matrix.python-version }}
       - name: doit develop_install
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
           conda install anaconda-project>=0.10.1
@@ -52,16 +58,13 @@ jobs:
           git describe
       - name: doit env_capture
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit env_capture
       - name: doit test_lint
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit test_lint
       - name: doit test_examples
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit test_examples

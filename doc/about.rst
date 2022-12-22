@@ -40,7 +40,7 @@ position to fund developers to work on HoloViz, you can contact
 ``sales@anaconda.com``, or you can also collaborate with HoloViz via
 `Quansight's open source partnerships <https://www.quansight.com/projects>`_.
 
-.. image:: https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png
+.. image:: https://know.anaconda.com/rs/387-XNW-688/images/2020_Anaconda_Logo_RGB_Corporate.png
    :height: 60px
    :alt: Anaconda website
    :target: http://www.anaconda.com
@@ -67,9 +67,32 @@ HoloViz libraries have been supported by a variety of different funding mechanis
   development of the HoloViews library.
 
 - Contracts to Anaconda, Inc. supporting the initial development of
-  GeoViews (from the UK Met Office),  Datashader and Colorcet (from In-Q-Tel), and
-  Panel (from the US Army Corps of Engineers ERDC).
+  GeoViews (from the UK Met Office),  Datashader and Colorcet (from DARPA
+  and In-Q-Tel), and Panel (from the US Army Corps of Engineers ERDC).
 
-- Contracts to Anaconda, Inc. from many other government agencies and
-  corporations, contributing to the maintenance and development of all
-  the HoloViz libraries.
+- Contracts to Anaconda, Inc. from Blackstone, Inc. supporting Panel, and from
+  many other government agencies and corporations contributing to the maintenance
+  and development of all the HoloViz libraries.
+
+Governance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The HoloViz governance has two levels - the HoloViz Organization 
+and the individual HoloViz Projects. This split allows us to stay aligned 
+as a community while supporting and benefiting from a diverse set of initiatives.
+
+The governing bodies at the HoloViz Organzation level are the Steering Committee 
+and Code of Conduct Committee. The Steering Committee is responsible for 
+higher-level aspects of the Organization, such as setting the overall scope, vision, 
+policy, and direction. Read more about `Organization governance <https://github.com/holoviz/holoviz/blob/master/doc/governance/org-docs/CHARTER.md>`_.
+
+Each HoloViz Project may specify their own governance that is compatible with the HoloViz
+Organization governance. As an example of governance at the HoloViz Project level, 
+let's consider this HoloViz.org website Project. The governing body of this Project 
+is the Maintainers, one of which is the Project Director, and another may be the 
+Lead Maintainer. The Project Director is responsible for the overall direction and 
+scope of the Project while a Lead Maintainer is responsible for releases and 
+day-to-day technical management of the Project. Read more about this website's 
+`Project's Governance <https://github.com/holoviz/holoviz/blob/master/doc/governance/project-docs/GOVERNANCE.md>`_, 
+or find the governance for other HoloViz Projects in the appropriate 
+repository within the `HoloViz GitHub Organization <https://github.com/holoviz>`_.

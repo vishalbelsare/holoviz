@@ -7,29 +7,36 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+a[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+b[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+rc[0-9]+'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Site to build and deploy'
+        type: choice
+        options:
+        - dev
+        - main
+        - dryrun
+        required: true
+        default: dryrun
+  schedule:
+    - cron: '0 2 1 */2 SUN'  # every two months on Sunday at 2 am
 
 jobs:
   build_docs:
     name: Documentation
     runs-on: 'ubuntu-latest'
-    strategy:
-      fail-fast: false
     timeout-minutes: 120
     defaults:
       run:
         shell: bash -l {0}
     env:
-      DESC: "Documentation build"
       MPLBACKEND: "Agg"
       MOZ_HEADLESS: 1
       DISPLAY: ":99.0"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
       - uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
@@ -37,50 +44,52 @@ jobs:
         run: git fetch --prune --tags --unshallow -f
       - name: Set output
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: conda setup
         run: |
-          conda config --set always_yes True
-          conda install -c pyviz "pyctdev>=0.5"
-          doit ecosystem_setup
-          doit env_create --python=3.7
+          conda update -n base -c defaults conda
+          conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 
       - name: doit develop_install
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
           conda install anaconda-project
           cd examples
-          anaconda-project prepare
+          anaconda-project prepare --env-spec doc
           cd ..
-          conda activate examples/envs/default
-          pip install --no-deps --no-build-isolation -e .
-          conda install -c pyviz/label/dev nbsite "nbconvert<6.0"
-          pip install pydata_sphinx_theme
+          conda activate examples/envs/doc
+          pip install --no-deps --no-build-isolation .
       - name: generate rst
         run: |
-          eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
       - name: build docs
         run: |
-          eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
+      - name: conda info/list
+        run: |
+          conda activate examples/envs/doc
+          conda info
+          conda list
       - name: git status
         run: |
           git status
           git diff
       - name: Deploy dev
         uses: peaceiris/actions-gh-pages@v3
-        if: (contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc'))
+        if: |
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'dev') ||
+          (github.event_name == 'push' && (contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           external_repository: pyviz-dev/holoviz
           publish_dir: ./builtdocs
           force_orphan: true
       - name: Deploy main
-        if: (!(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
+        if: |
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
+          (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

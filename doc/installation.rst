@@ -1,6 +1,31 @@
 Installation
 ============
 
+If you want to use a HoloViz tool, you can install it into your
+current environment with pip or conda just as you would any other
+Python library. To get the most common HoloViz tools (panel,
+hvplot, holoviews, datashader, param, and colorcet), just do:
+
+   > conda install hvplot datashader
+
+You can add ``geoviews`` to that list if you have geographic data that needs
+to be projected into different coordinates, and you can add ``lumen`` if you
+want to try low-code and no-code ways to use HoloViz tools.
+
+Tutorial Installation
+=====================
+
+If you want to run the tutorials, we recommend following the five
+steps below instead of (or in addition to) installing HoloViz tools
+into your main environment. These tutorial installation instructions
+create a fully independent, separate environment just for running the
+tutorials, including all core and optional dependencies pinned to
+known working versions. That way, you can be sure you're using the
+versions that have been tested with these examples, and you can also
+delete the entire directory later with no trace if you decide the
+tools aren't useful to you.
+
+
 Step 1: Install a `Miniconda <https://conda.io/miniconda.html>`_  (or `Anaconda <https://www.anaconda.com/downloads>`_) environment
 -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -18,11 +43,15 @@ twice to get the very latest) to ensure you have the latest version::
    > conda update -n base conda
    > conda update -n base conda
 
-You should then make sure you have `anaconda-project` installed:
+We recommend installing `anaconda-project` is a new environment, to keep
+things separate and clean. We'll create an environment called `project`, 
+please select another name if you already have an environment named this way::
 
-::
+   > conda create -n project "anaconda-project>=0.11"
 
-   > conda install anaconda-project
+Now activate this environment::
+
+   > conda activate project
 
 
 Step 2: Download and extract the tutorial project
@@ -31,10 +60,10 @@ Step 2: Download and extract the tutorial project
 The following steps will fetch and extract the latest version of the
 HoloViz tutorial. The tutorial files and associated conda environment
 will be installed in the current directory, and should not affect
-any other Python environments you may have. 
+any other Python environments you may have.
 
-*If you are attending a live tutorial or workshop, make sure to run 
-these steps again the day before the tutorial to ensure you have the 
+*If you are attending a live tutorial or workshop, make sure to run
+these steps again the day before the tutorial to ensure you have the
 same version of the project that the presenter will use.*
 
 ::
@@ -85,6 +114,6 @@ tutorial.
 Step 5: Run the tutorials
 -------------------------
 
-Now you can run through the `tutorials <tutorial/index.rst>`_, learn
+Now you can run through the `tutorials <tutorial/index.html>`_, learn
 how to use all these tools, and apply them to anything you need to
 visualize.  Have fun!

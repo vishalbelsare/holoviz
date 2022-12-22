@@ -114,3 +114,15 @@ doc/**/*.json
 builtdocs/
 
 .DS_Store
+
+examples/envs/
+examples/data/
+examples/.projectignore
+examples/output/
+
+holoviz/examples/
+jupyter_execute/
+.version
+
+.vscode
+.markdown*
